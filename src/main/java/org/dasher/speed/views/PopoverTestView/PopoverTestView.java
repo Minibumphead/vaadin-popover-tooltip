@@ -27,7 +27,7 @@ public class PopoverTestView extends Main {
 	}
 	
 	public PopoverTestView() {
-		add( new H2( RouteConfig.LARGE_CONTAINERS_NAME ) );
+		add( new H2( RouteConfig.GENERAL_ISSUE_NAME ) );
 		
 		add( new MySpan( "For certain components the popover implementation of the tooltip doesn't work as expected. Hover the date picker down below for an example." ) );
 		add( new MySpan( "Problem 1: The Popover remains open when the date picker is opened." ) );
