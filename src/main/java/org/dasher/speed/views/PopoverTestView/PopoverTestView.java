@@ -1,9 +1,12 @@
 package org.dasher.speed.views.PopoverTestView;
 
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.datepicker.DatePicker;
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Main;
 import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.dom.Style.FlexDirection;
 import com.vaadin.flow.router.Menu;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
@@ -27,7 +30,7 @@ public class PopoverTestView extends Main {
 	}
 	
 	public PopoverTestView() {
-		add( new H2( RouteConfig.LARGE_CONTAINERS_NAME ) );
+		add( new H2( RouteConfig.GENERAL_ISSUE_NAME ) );
 		
 		add( new MySpan( "For certain components the popover implementation of the tooltip doesn't work as expected. Hover the date picker down below for an example." ) );
 		add( new MySpan( "Problem 1: The Popover remains open when the date picker is opened." ) );
@@ -39,6 +42,30 @@ public class PopoverTestView extends Main {
 		datePickerContainer.add( datePicker );
 		add( datePickerContainer );
 		addClassNames( LumoUtility.BoxSizing.BORDER, LumoUtility.Display.FLEX, LumoUtility.FlexDirection.COLUMN, LumoUtility.Padding.MEDIUM, LumoUtility.Gap.SMALL );
+		
+		Div testButtonContainer = new Div();
+		testButtonContainer.getStyle().setFlexDirection( FlexDirection.ROW );
+		for (int i = 0; i< 100; i++){
+			final int index = i;
+			Button testButton = new Button( String.valueOf( index) );
+			testButtonContainer.add( testButton );
+			if (index % 2 == 0){
+				PopoverTooltip.createOrRenew(testButton, "<span>" +"testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest"+ index  + "</span>"  );
+			} else {
+				testButton.setTooltipText( "Standard Tooltip" );
+			}
+//			testButton.getStyle().setMaxWidth( "1rem" );
+//			testButton.getStyle().setMaxHeight( "1rem" );
+
+//			testButton.addClickListener( event -> {
+//				Div testButtonDiv = new Div();
+//				testButtonDiv.add( new Span( "Test Button " + index + " clicked" ) );
+//				testButtonContainer.add( testButtonDiv );
+//			} );
+		}
+		add( testButtonContainer );
+		
+		
 		
 	}
 	
