@@ -30,7 +30,7 @@ public final class MainLayout extends AppLayout {
 	}
 	
 	private Div createHeader() {
-		var appName = new Span( "Feature Request Economed" );
+		var appName = new Span( "Feature Request " );
 		appName.addClassNames( FontWeight.SEMIBOLD, FontSize.LARGE );
 		var header = new Div( appName );
 		header.addClassNames( Display.FLEX, Padding.MEDIUM, Gap.MEDIUM, AlignItems.CENTER );

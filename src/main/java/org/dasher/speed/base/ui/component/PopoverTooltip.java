@@ -28,7 +28,7 @@ public class PopoverTooltip extends Popover {
 	private static final int POPOVER_HOVER_DELAY = 0;
 	private static final int POPOVER_HIDE_DELAY = 0;
 	private static final String POPOVER_TOOLTIP_CLASS = "popover-tooltip";
-	private static final String TOOLTIP_ATTRIBUTES_KEY = "economed-tooltip";
+	private static final String TOOLTIP_ATTRIBUTES_KEY = "custom-tooltip";
 	
 	
 	/**
